@@ -2,12 +2,11 @@
 
 int main()
 {
-    int unsortiert[100];
+    int unsortiert[10] = {5, 3, 8, 1, 9, 2, 7, 4, 6, 3};
     int sortiert[100];
     int n, i, j, max, e;
 
-    printf("Wie viele Zahlen moechtest du sortieren? ");
-    scanf("%d", &n);
+    n = 10;
 
     // Mehr als 1 Element?
     if (n <= 1)
@@ -16,12 +15,12 @@ int main()
         return 0;
     }
 
-    printf("Bitte die Zahlen eingeben:\n");
+    printf("Unsortierte Liste:\n");
     for (i = 0; i < n; i++)
     {
-        printf("Zahl %d: ", i + 1);
-        scanf("%d", &unsortiert[i]);
+        printf("%d ", unsortiert[i]);
     }
+    printf("\n");
 
     // groessten Wert herausfinden
     max = unsortiert[0];
