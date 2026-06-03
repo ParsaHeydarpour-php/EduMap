@@ -2,57 +2,46 @@
 
 int main()
 {
-    int unsortiert[10] = {5, 3, 8, 1, 9, 2, 7, 4, 6, 3};
-    int sortiert[100];
-    int n, i, j, max, e;
+    int liste[10] = {5, 3, 8, 1, 9, 2, 7, 4, 6, 3};
+    int zaehler[100];
+    int i, j, groesster, anzahl;
 
-    n = 10;
+    anzahl = 10;
 
-    // Mehr als 1 Element?
-    if (n <= 1)
+    printf("Meine Liste:\n");
+    for (i = 0; i < anzahl; i++)
     {
-        printf("Zu wenig Elemente!\n");
-        return 0;
-    }
-
-    printf("Unsortierte Liste:\n");
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", unsortiert[i]);
+        printf("%d ", liste[i]);
     }
     printf("\n");
 
-    // groessten Wert herausfinden
-    max = unsortiert[0];
-    for (i = 0; i < n; i++)
+    // groessten Wert finden
+    groesster = liste[0];
+    for (i = 0; i < anzahl; i++)
     {
-        if (unsortiert[i] > max)
+        if (liste[i] > groesster)
         {
-            max = unsortiert[i];
+            groesster = liste[i];
         }
     }
 
-    // Sortierte Liste auf 0 setzen
-    for (i = 0; i <= max; i++)
+    // zaehler auf 0 setzen
+    for (i = 0; i <= groesster; i++)
     {
-        sortiert[i] = 0;
+        zaehler[i] = 0;
     }
 
-    // Fuer jedes Element (e) der unsortierten Liste:
-    // Stelle e der sortierten Liste um 1 erhoehen
-    for (i = 0; i < n; i++)
+    // zaehlen wie oft jede Zahl vorkommt
+    for (i = 0; i < anzahl; i++)
     {
-        e = unsortiert[i];
-        sortiert[e] = sortiert[e] + 1;
+        zaehler[liste[i]] = zaehler[liste[i]] + 1;
     }
 
-    // Fuer jedes Element (e) der sortierten Liste:
-    // Ausgabe von e mal dem aktuellen Index
-    printf("\nErgebnis (sortiert):\n");
-    for (i = 0; i <= max; i++)
+    // sortiert ausgeben
+    printf("\nSortiert:\n");
+    for (i = 0; i <= groesster; i++)
     {
-        e = sortiert[i];
-        for (j = 0; j < e; j++)
+        for (j = 0; j < zaehler[i]; j++)
         {
             printf("%d ", i);
         }
