@@ -15,15 +15,8 @@ int main()
     }
     printf("\n");
 
-    // groessten Wert finden
-    groesster = liste[0];
-    for (i = 0; i < anzahl; i++)
-    {
-        if (liste[i] > groesster)
-        {
-            groesster = liste[i];
-        }
-    }
+    // groesster Wert in der Liste
+    groesster = 9;
 
     // zaehler auf 0 setzen
     for (i = 0; i <= groesster; i++)
